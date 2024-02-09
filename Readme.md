@@ -9,10 +9,28 @@ For this repository we going to complete the following goals
     [ ] Clients can buy products.
     [ ] Know the total input.
     [ ] discount by country.
-    [ ] promotional code on basket.
+    [ ] promotional code on basket (only can apply one).
     [ ] products can have discounts
 
 Diseño y implementación del back-end de un e-commerce
+
+### *Aclaraciones*
+
+● Por simplicidad, puedes trabajar sin unidad en los importes, sin divisa monetaria, guardando sólo el número. 15€ podrían ser 15.
+● El lenguaje a usar es Python 3.x. El estilo, las buenas prácticas, la organización del diseño y la pulcritud del código no dependen del lenguaje de programación que se use ;)
+
+### *¿Qué se evaluará?*
+
+Tus conocimientos y habilidades de diseño y programación.
+
+### *¿Qué debes hacer?*
+
+El objetivo es conseguir estos incrementos de funcionalidad. Para ello no puedes usar persistencia (ej. base de datos, etc.) ni ningún framework (ej. Django, etc.). Aparte de estas restricciones, el diseño y la implementación del código es totalmente libre.
+La idea es evaluar tus conocimientos puramente de Backend, es decir que desde consola puedas hacer algo tipo:
+prod = crea_producto()
+añadir_al_carro(prod)
+print total_del_carro()
+Puedes definir las clases, funciones, parámetros recibidos... que consideres oportuno. Hazlo lo mejor que sepas y ¡lúcete!
 
 # 1. Primera parte
 
@@ -80,21 +98,3 @@ Este producto B tiene además un descuento por cantidad configurado de la manera
 Adicionalmente tenemos un **código promocional** ("promo100") que aplica un descuento directo de 100€ si el cliente compra más de 200€.
 ● Para un **carro** con 1 unidad del **producto** A y 1 unidad del **producto** B usando el **código promocional** "promo100", el precio total a pagar será de 46.5€ ● Para un **carro** con 3 unidades del **producto** A y 9 unidades del **producto** B usando el **código promocional** "promo100", el precio total a pagar será de 103.5€ ● Para un **carro** con 3 unidades del **producto** A y 10 unidades del **producto** B usando el **código promocional** "promo100", el precio total a pagar será de 100€ ● Para un **carro** con 3 unidades del **producto** A y 60 unidades del **producto** B usando el **código promocional** "promo100", el precio total a pagar será de 171€ ● Para un **carro** con 4 unidades del **producto** A y 110 unidades del **producto** B usando el **código promocional** "promo100", el precio total a pagar será de 183.5€
 ● Para un **carro** con 6 unidades del **producto** A y 200 unidades del **producto** B usando el **código promocional** "promo100", el precio total a pagar será de 365€
-
-### *Aclaraciones*
-
-● Por simplicidad, puedes trabajar sin unidad en los importes, sin divisa monetaria, guardando sólo el número. 15€ podrían ser 15.
-● El lenguaje a usar es Python 3.x. El estilo, las buenas prácticas, la organización del diseño y la pulcritud del código no dependen del lenguaje de programación que se use ;)
-
-### *¿Qué se evaluará?*
-
-Tus conocimientos y habilidades de diseño y programación.
-
-### *¿Qué debes hacer?*
-
-El objetivo es conseguir estos incrementos de funcionalidad. Para ello no puedes usar persistencia (ej. base de datos, etc.) ni ningún framework (ej. Django, etc.). Aparte de estas restricciones, el diseño y la implementación del código es totalmente libre.
-La idea es evaluar tus conocimientos puramente de Backend, es decir que desde consola puedas hacer algo tipo:
-prod = crea_producto()
-añadir_al_carro(prod)
-print total_del_carro()
-Puedes definir las clases, funciones, parámetros recibidos... que consideres oportuno. Hazlo lo mejor que sepas y ¡lúcete!
