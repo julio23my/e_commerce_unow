@@ -4,26 +4,32 @@ For this repository we going to complete the following goals
 
 ## Instalation
 
-## First
+    You can used the makefile 
 
-    [ ] Clients can buy products.
-    [ ] Know the total input.
-    [ ] discount by country.
-    [ ] promotional code on basket (only can apply one).
-    [ ] products can have discounts
+## Principals
 
-Diseño y implementación del back-end de un e-commerce
+    [x] Clients can buy products.
+    [x] Know the total input.
+    [x] discount by country.
+    [x] promotional code on basket (only can apply one).
+    [x] products can have discounts
+    [ ] add unnittest
+    [ ] refact code
 
-### *Aclaraciones*
+# Instrucciones
+
+    Diseño y implementación del back-end de un e-commerce
+
+## Aclaraciones
 
     ● Por simplicidad, puedes trabajar sin unidad en los importes, sin divisa monetaria, guardando sólo el número. 15€ podrían ser 15.
     ● El lenguaje a usar es Python 3.x. El estilo, las buenas prácticas, la organización del diseño y la pulcritud del código no dependen del lenguaje de programación que se use ;)
 
-### *¿Qué se evaluará?*
+### ¿Qué se evaluará?
 
 Tus conocimientos y habilidades de diseño y programación.
 
-### *¿Qué debes hacer?*
+### ¿Qué debes hacer?
 
 El objetivo es conseguir estos incrementos de funcionalidad. Para ello no puedes usar persistencia (ej. base de datos, etc.) ni ningún framework (ej. Django, etc.). Aparte de estas restricciones, el diseño y la implementación del código es totalmente libre.
 La idea es evaluar tus conocimientos puramente de Backend, es decir que desde consola puedas hacer algo tipo:
@@ -40,11 +46,11 @@ print(total_del_carro())
 
 Puedes definir las clases, funciones, parámetros recibidos... que consideres oportuno. Hazlo lo mejor que sepas y ¡lúcete!
 
-# 1. Primera parte
+## 1. Primera parte
 
 Formas parte del equipo de desarrollo de una plataforma ecommerce y en el sprint actual te has asignado la siguiente tarea:
 
-#### Back-end: Añadir productos con dto. en cesta y poder aplicar códigos promocionales en la cesta
+### Back-end: Añadir productos con dto. en cesta y poder aplicar códigos promocionales en la cesta
 
     ● El objetivo es que los clientes puedan comprar los productos. 
 
@@ -100,7 +106,7 @@ Tenemos un **producto** A que se vende en España, Reino Unido e Italia.
 
     ● Para un carro con 2 unidades del producto A y 1 unidad del producto B usando el código promocional "promo5", el precio total a pagar será de 105€
 
-# 2. Segunda parte
+## 2. Segunda parte
 
 Después de un tiempo con la tienda en marcha, como empresa hemos fijado el objetivo de aumentar el precio medio de las cestas. Es decir, que los clientes gasten más en cada compra.
 
