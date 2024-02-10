@@ -44,7 +44,7 @@ Puedes definir las clases, funciones, parámetros recibidos... que consideres op
 
 Formas parte del equipo de desarrollo de una plataforma ecommerce y en el sprint actual te has asignado la siguiente tarea:
 
-**Back-end: Añadir productos con dto. en cesta y poder aplicar códigos promocionales en la cesta**
+#### Back-end: Añadir productos con dto. en cesta y poder aplicar códigos promocionales en la cesta
 
     ● El objetivo es que los clientes puedan comprar los productos. 
 
@@ -58,7 +58,7 @@ Formas parte del equipo de desarrollo de una plataforma ecommerce y en el sprint
     
     ● Además, el cliente podría añadir un código promocional al carro que bajaría el precio total a pagar. 
 
-*Requisitos:*
+#### Requisitos
 
     Los productos pueden: 
         - Tener precios distintos según el país. Por ejemplo, 20€ en España pero 22€ en Italia. 
@@ -73,7 +73,7 @@ Los códigos promocionales se pueden añadir al carro. Estos códigos promociona
     
     ● Un carro puede tener como máximo un solo código promocional.
 
-**Caso 1**
+## Caso 1
 
 Tenemos un **producto** A que se vende en España, Reino Unido e Italia.
 
@@ -88,7 +88,7 @@ Tenemos un **producto** A que se vende en España, Reino Unido e Italia.
         ● En "GB" el precio total a pagar será de 99.0€ 
         ● En "IT" el precio total a pagar será de 82.5€.
 
-**Caso 2**
+## Caso 2
 
     ● Tenemos un producto A que se vende en España con un precio base de 50€ al que hay que aplicar un 10% de descuento. 
 
@@ -114,7 +114,7 @@ Ejemplo: producto con precio 10€ con descuento de 2€ que nos da un precio de
 
 Desde el departamento técnico hemos decidido que implementaremos esta nueva funcionalidad en este sprint.
 
-*Ejemplos de salida esperada*
+#### Ejemplos de salida esperada
 
 Tenemos un **producto** A que se vende en España con un precio base de 50€ al que hay que aplicar un 10% de descuento.
 Este producto A tiene además un descuento por cantidad fijo de 45€ para 3 o más unidades.

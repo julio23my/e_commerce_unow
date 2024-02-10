@@ -17,13 +17,21 @@ class Basket:
             return total - 100
             
         
-    def total(self):
+    def total_before_promotion_code(self):
         total = 0
         for product, quantity, discount in self.items:
             total += product.price * quantity
             if discount:
                 total *= Discount.calculate_discount(country_code=product.country_code)
         return total
-
+    
+    def total_after_promotion_code(self):
+        total = self.total_before_promotion_code()
+        return self.apply_promotion_code(self.promotion_code, total)
+    
+    def total(self):
+        return self.total_after_promotion_code()
+    
     def clean(self):
         self.items = []
+        self.promotion_code = ''

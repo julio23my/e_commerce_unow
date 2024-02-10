@@ -19,6 +19,12 @@ class ListCountries:
     def add(self, country):
         if country not in self.countries:
             self.countries.append(country)
+            
+    def select(self, country_code)-> Country:
+        for country in self.countries:
+            if country.code == country_code:
+                return country
+        return None
 
     def __str__(self):
         countries = []
