@@ -1,8 +1,9 @@
 class Discount:
-    def __init__(self):
-        pass
-
-    def calculate_discount(self, country_code) -> float:
+    def __init__(self, percent=0):
+        self.percent = percent
+        
+    @staticmethod
+    def calculate_discount_by_country(country_code) -> float:
         if country_code == "ES":
             return 1
         if country_code == "GB":
@@ -11,8 +12,9 @@ class Discount:
             return 0.75
         else:
             return 1
-    
-    def discount_by_quantity(self, quantity, price) -> float:
+        
+    @staticmethod
+    def discount_by_quantity(quantity, price) -> float:
         if quantity > 10:
             return price - 5
         if quantity > 50:

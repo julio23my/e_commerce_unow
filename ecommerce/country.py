@@ -26,7 +26,7 @@ class ListCountries:
                 return country
         return None
 
-    def __str__(self):
+    def __str__(self)-> str:
         countries = []
         for country in self.countries:
             countries.append(str(country.name + '-' + country.code))

@@ -1,6 +1,7 @@
 from ecommerce.basket import Basket
 from ecommerce.country import ListCountries, Country
-from product import Product
+from ecommerce.discount import Discount
+from ecommerce.product import Product
 
 def create_country_list()-> ListCountries:
     return ListCountries()
@@ -11,16 +12,16 @@ def select_country(country_list, country_code)-> Country:
 def create_country(name, code, symbol)-> Country:
     return Country(name, code, symbol)
 
-def make_product(name, price, country_code='')-> Product:
-    return Product(name, price, country_code)
+def make_product(name, price, country_code='', discount:Discount=None)-> Product:
+    return Product(name, price, country_code, discount)
 
 def create_basket()-> Basket:
     return Basket()
 
-def add_to_basket(basket, product, quantity=1)-> None:
+def add_to_basket(basket:Basket, product:Product, quantity=1)-> None:
     basket.add(product, quantity)
 
-def buy_products(basket)-> str:
+def buy_products(basket:Basket)-> str:
     results = f'{basket.total()} euros. Thank you for your purchase!'
     basket.clean()
     return results

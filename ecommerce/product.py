@@ -1,5 +1,8 @@
+from .discount import Discount
+
+
 class Product:
-    def __init__(self, name, price, country_code=''):
+    def __init__(self, name, price, country_code='', discount:Discount=None):
         """product class create
 
         Args:
@@ -11,19 +14,11 @@ class Product:
         self.name = name
         self.price = price
         self.country_code = country_code.upper()
-
-    def __str__(self):
+        self.discount = discount.percent / 100 - 1 if discount else None
+        if self.discount:
+            self.discount = self.discount * - 1
+    def __str__(self)-> str:
         country = self.country_code if self.country_code else 'Global'
+        if self.discount:
+            return f"{self.name} - {self.price} - {country} - {self.discount * 100}%"
         return f"{self.name} - {self.price} - {country}"
-
-
-def make_product(name, price, country_code=''):
-    return Product(name, price, country_code)
-
-def add_to_basket(basket, product, quantity=1):
-    basket.add(product, quantity)
-    
-def buy_products(basket):
-    results = f'{basket.total()} euros. Thank you for your purchase!'
-    basket.clean()
-    return results
