@@ -10,7 +10,15 @@ class Basket:
         return f'Basket with {len(self.items)} items'
 
     def add(self, product, quantity=1):
-        self.items.append((product, quantity))
+        repeat = False
+        if self.items:
+            for item in self.items:
+                if item[0].name == product.name:
+                    repeat = True
+                    item[1] += quantity
+                    return
+        if not repeat:
+            self.items.append((product, quantity))
         
     def apply_promotion_code(self, promotion_code):
         self.promotion_code = promotion_code
@@ -29,9 +37,16 @@ class Basket:
         total = 0
         for product, quantity in self.items:
             product_total = 0
-            product_total += product.price * quantity
+            proudct_base_discount = self.find_base_discount(product.discount)
+            if proudct_base_discount:
+                price = self.apply_discount_to_total(product.price, proudct_base_discount)
+                product_total += price * quantity
+            else:
+                product_total += product.price * quantity
             if product.discount:
-                product_total *= product.discount
+                real_discount = self.find_my_real_discount(quantity, product.discount)
+                if real_discount:
+                    product_total = self.apply_discount_to_total(product_total, real_discount)
             if product.country_code:
                 product_total *= Discount.calculate_discount_by_country(country_code=product.country_code)
             total += product_total
@@ -53,3 +68,26 @@ class Basket:
         for product, quantity in self.items:
             total += quantity
         return total
+    
+    @staticmethod
+    def find_my_real_discount(quantity, discounts):
+        if discounts:
+            ordered_discounts = sorted(discounts, key=lambda d: d.quantity, reverse=True)
+            for discount in ordered_discounts:
+                if not discount.is_base and quantity >= discount.quantity:
+                    return discount
+        return None
+    
+    @staticmethod
+    def find_base_discount(discounts):
+        if discounts:
+            for discount in discounts:
+                if discount.is_base:
+                    return discount
+        return None
+    
+    @staticmethod
+    def apply_discount_to_total(total, discount):
+        if discount.is_percent:
+            return total * discount.product_discount
+        return total + discount.product_discount

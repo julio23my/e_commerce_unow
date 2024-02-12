@@ -12,7 +12,7 @@ def select_country(country_list, country_code)-> Country:
 def create_country(name, code, symbol)-> Country:
     return Country(name, code, symbol)
 
-def make_product(name, price, country_code='', discount:Discount=None)-> Product:
+def make_product(name, price, country_code='', discount=None)-> Product:
     return Product(name, price, country_code, discount)
 
 def create_basket()-> Basket:

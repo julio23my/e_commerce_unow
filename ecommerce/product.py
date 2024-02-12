@@ -2,7 +2,7 @@ from .discount import Discount
 
 
 class Product:
-    def __init__(self, name, price, country_code='', discount:Discount=None):
+    def __init__(self, name, price, country_code='', discount=None):
         """product class create
 
         Args:
@@ -14,9 +14,15 @@ class Product:
         self.name = name
         self.price = price
         self.country_code = country_code.upper()
-        self.discount = discount.percent / 100 - 1 if discount else None
+        self.discount = discount
         if self.discount:
-            self.discount = self.discount * - 1
+            if type(discount) == list:
+                self.discount = discount
+            elif type(discount) == Discount:
+                self.discount = [discount]
+            else:
+                self.discount = None
+            
     def __str__(self)-> str:
         country = self.country_code if self.country_code else 'Global'
         if self.discount:
