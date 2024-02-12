@@ -18,3 +18,7 @@ lint: ## Run linter
 pretty: ## Run code formatter
 	@echo "Running code formatter"
 	@black .
+
+test: ## Run tests
+	@echo "Running tests"
+	@pytest

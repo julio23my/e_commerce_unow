@@ -4,7 +4,15 @@ For this repository we going to complete the following goals
 
 ## Instalation
 
-    You can used the makefile 
+You can used the makefile command `create-env` and follow the activate .env flow
+
+after this we need to do `pip install -r requirements.txt`
+
+after this we can do the local test with `pytest` or `make test`
+
+## Test information
+
+in the test whe have all the case of used inside the documentation and some of one to see that the principal functions are not broken.
 
 ### Principals
 
@@ -13,8 +21,8 @@ For this repository we going to complete the following goals
     [x] discount by country.
     [x] promotional code on basket (only can apply one).
     [x] products can have discounts
-    [ ] add unnittest
-    [ ] refact code
+    [x] add unnittest
+    [x] refact code
 
 ## Instrucciones
 
